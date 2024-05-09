@@ -11,5 +11,5 @@ public class UnitOfWork(AppDbContext dbContext) : IUnitOfWork
 
     public ICommentRepository Comments =>new CommentRepository(_dbContext);
 
-    public IUserRepository Users => throw new NotImplementedException();
+    public IUserRepository Users => new UserRepository(_dbContext);
 }
