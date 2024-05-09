@@ -1,4 +1,4 @@
-﻿namespace BlogPostWebAPI.DTOs;
+﻿namespace BlogPostWebAPI.DTOs.UserDTOs;
 
 public class LoginDto
 {

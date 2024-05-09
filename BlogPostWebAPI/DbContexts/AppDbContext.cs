@@ -1,10 +1,6 @@
-﻿using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Enums;
-using Microsoft.EntityFrameworkCore;
+﻿namespace BlogPostWebAPI.DbContexts;
 
-namespace BlogPostWebAPI.DbContexts;
-
-public class AppDbContext(DbContextOptions<AppDbContext> options) 
+public class AppDbContext(DbContextOptions<AppDbContext> options)
     : DbContext(options)
 {
     public DbSet<User> Users { get; set; }

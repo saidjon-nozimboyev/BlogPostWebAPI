@@ -1,7 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-
-namespace BlogPostWebAPI.Common.Security;
+﻿namespace BlogPostWebAPI.Common.Security;
 
 public static class PasswordHasher
 {

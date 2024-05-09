@@ -2,5 +2,5 @@
 
 public interface IUpdatable<T>
 {
-    Task UpdateAsync(T entity);  
+    Task UpdateAsync(T entity);
 }

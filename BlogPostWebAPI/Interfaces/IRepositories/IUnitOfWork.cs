@@ -3,6 +3,6 @@
 public interface IUnitOfWork
 {
     IPostRepository Posts { get; }
-    ICommentRepository Comments { get; }    
-    IUserRepository Users { get; }  
+    ICommentRepository Comments { get; }
+    IUserRepository Users { get; }
 }

@@ -1,10 +1,4 @@
-﻿using BlogPostWebAPI.DbContexts;
-using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Interfaces.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-
-namespace BlogPostWebAPI.Repositories;
+﻿namespace BlogPostWebAPI.Repositories;
 #pragma warning disable
 public class UserRepository(AppDbContext dbContext) : IUserRepository
 {

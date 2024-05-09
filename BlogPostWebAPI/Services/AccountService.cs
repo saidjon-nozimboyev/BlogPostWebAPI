@@ -1,27 +1,17 @@
-﻿using BlogPostWebAPI.Common.Exceptions;
-using BlogPostWebAPI.Common.Helpers;
-using BlogPostWebAPI.Common.Security;
-using BlogPostWebAPI.DTOs;
-using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Interfaces.Repositories;
-using BlogPostWebAPI.Interfaces.Services;
-using Microsoft.Extensions.Caching.Memory;
-using System.Net;
-
-namespace BlogPostWebAPI.Services;
+﻿namespace BlogPostWebAPI.Services;
 
 public class AccountService(IUnitOfWork unitOfWork,
                             IFileService fileService,
                             IEmailService emailService,
                             IMemoryCache memoryCache,
-                            IAuthManager authManager) 
+                            IAuthManager authManager)
     : IAccountService
 {
-    private readonly IUnitOfWork _unitOfWork = unitOfWork;  
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
     private readonly IFileService _fileService = fileService;
     private readonly IEmailService _emailService = emailService;
     private readonly IMemoryCache _memoryCache = memoryCache;
-    private readonly IAuthManager _authManager = authManager;   
+    private readonly IAuthManager _authManager = authManager;
 
     public Task CheckCodeAsync(string email, string code)
     {
@@ -46,9 +36,9 @@ public class AccountService(IUnitOfWork unitOfWork,
     {
         var model = await _unitOfWork.Users.GetByEmailAsync(x => x.Email == dto.Email);
         if (model is not null)
-            throw new StatusCodeException(HttpStatusCode.Conflict,"User with this email already exists!");
-        
-        var user = (User)dto;   
+            throw new StatusCodeException(HttpStatusCode.Conflict, "User with this email already exists!");
+
+        var user = (User)dto;
         if (dto.Image is null)
             user.ImagePath = FileHelper.GetDefaultImagePath();
         else

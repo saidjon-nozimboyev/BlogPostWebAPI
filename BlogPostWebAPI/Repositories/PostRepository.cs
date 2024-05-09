@@ -1,14 +1,8 @@
-﻿using BlogPostWebAPI.DbContexts;
-using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Interfaces.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-
-namespace BlogPostWebAPI.Repositories;
+﻿namespace BlogPostWebAPI.Repositories;
 #pragma warning disable
 public class PostRepository(AppDbContext dbContext) : IPostRepository
 {
-    private readonly AppDbContext _dbContext = dbContext;   
+    private readonly AppDbContext _dbContext = dbContext;
 
     public async Task CreateAsync(Post entity)
     {

@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BlogPostWebAPI.Entities;
+﻿namespace BlogPostWebAPI.Entities;
 
 public sealed class Comment
 {

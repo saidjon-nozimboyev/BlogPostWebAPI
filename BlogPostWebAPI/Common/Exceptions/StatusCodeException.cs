@@ -1,15 +1,13 @@
-﻿using System.Net;
-
-namespace BlogPostWebAPI.Common.Exceptions;
+﻿namespace BlogPostWebAPI.Common.Exceptions;
 
 public class StatusCodeException : Exception
 {
-    public new string Message { get; set; } 
+    public new string Message { get; set; }
     public HttpStatusCode StatusCode { get; set; }
 
     public StatusCodeException(HttpStatusCode code, string message)
     {
-        Message = message; 
+        Message = message;
         StatusCode = code;
     }
 }

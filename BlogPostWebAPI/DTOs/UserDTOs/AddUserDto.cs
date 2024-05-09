@@ -1,9 +1,4 @@
-﻿using BlogPostWebAPI.Common.Attributes;
-using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace BlogPostWebAPI.DTOs;
+﻿namespace BlogPostWebAPI.DTOs.UserDTOs;
 
 public class AddUserDto
 {

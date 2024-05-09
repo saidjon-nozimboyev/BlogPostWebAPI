@@ -1,7 +1,4 @@
-﻿using BlogPostWebAPI.Common.Validators;
-using System.ComponentModel.DataAnnotations;
-
-namespace BlogPostWebAPI.Common.Attributes;
+﻿namespace BlogPostWebAPI.Common.Attributes;
 
 [AttributeUsage(AttributeTargets.Property)]
 public class Password : ValidationAttribute
@@ -10,7 +7,7 @@ public class Password : ValidationAttribute
     {
         var password = value as string;
 
-        if (password is null) 
+        if (password is null)
             return new ValidationResult("Password required!");
         if (password.Length < 8)
             return new ValidationResult("Password must be more than 8 characters!");

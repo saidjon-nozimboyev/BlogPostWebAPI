@@ -1,7 +1,4 @@
-﻿using BlogPostWebAPI.DbContexts;
-using BlogPostWebAPI.Interfaces.Repositories;
-
-namespace BlogPostWebAPI.Repositories;
+﻿namespace BlogPostWebAPI.Repositories;
 
 public class UnitOfWork(AppDbContext dbContext) : IUnitOfWork
 {
@@ -9,7 +6,7 @@ public class UnitOfWork(AppDbContext dbContext) : IUnitOfWork
 
     public IPostRepository Posts => new PostRepository(_dbContext);
 
-    public ICommentRepository Comments =>new CommentRepository(_dbContext);
+    public ICommentRepository Comments => new CommentRepository(_dbContext);
 
     public IUserRepository Users => new UserRepository(_dbContext);
 }

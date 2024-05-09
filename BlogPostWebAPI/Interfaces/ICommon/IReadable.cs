@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace BlogPostWebAPI.Interfaces.Common;
+﻿namespace BlogPostWebAPI.Interfaces.Common;
 
 public interface IReadable<T>
 {

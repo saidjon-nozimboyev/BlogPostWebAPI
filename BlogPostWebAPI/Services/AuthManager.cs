@@ -1,11 +1,4 @@
-﻿using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Interfaces.Services;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
-namespace BlogPostWebAPI.Services;
+﻿namespace BlogPostWebAPI.Services;
 
 public class AuthManager(IConfiguration configuration) : IAuthManager
 {

@@ -1,7 +1,4 @@
-﻿using BlogPostWebAPI.Common.Helpers;
-using BlogPostWebAPI.Interfaces.Services;
-
-namespace BlogPostWebAPI.Services;
+﻿namespace BlogPostWebAPI.Services;
 
 public class FileService : IFileService
 {

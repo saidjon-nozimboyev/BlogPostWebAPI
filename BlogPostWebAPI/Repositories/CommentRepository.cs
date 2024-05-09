@@ -1,14 +1,9 @@
-﻿using BlogPostWebAPI.DbContexts;
-using BlogPostWebAPI.Entities;
-using BlogPostWebAPI.Interfaces.Repositories;
-using System.Linq.Expressions;
-
-namespace BlogPostWebAPI.Repositories;
+﻿namespace BlogPostWebAPI.Repositories;
 #pragma warning disable
 
 public class CommentRepository(AppDbContext dbContext) : ICommentRepository
 {
-    private readonly AppDbContext _dbContext = dbContext;   
+    private readonly AppDbContext _dbContext = dbContext;
 
     public async Task CreateAsync(Comment entity)
     {

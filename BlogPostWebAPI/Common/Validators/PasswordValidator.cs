@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace BlogPostWebAPI.Common.Validators;
+﻿namespace BlogPostWebAPI.Common.Validators;
 
 public static class PasswordValidator
 {

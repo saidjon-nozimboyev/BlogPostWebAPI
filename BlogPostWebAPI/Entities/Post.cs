@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BlogPostWebAPI.Entities;
+﻿namespace BlogPostWebAPI.Entities;
 
 public sealed class Post : Base
 {

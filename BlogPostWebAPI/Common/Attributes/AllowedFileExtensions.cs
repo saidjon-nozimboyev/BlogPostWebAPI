@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BlogPostWebAPI.Common.Attributes;
+﻿namespace BlogPostWebAPI.Common.Attributes;
 
 
 [AttributeUsage(AttributeTargets.Property)]

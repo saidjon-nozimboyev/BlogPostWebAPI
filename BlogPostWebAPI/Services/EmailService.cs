@@ -1,10 +1,4 @@
-﻿using BlogPostWebAPI.Interfaces.Services;
-using MailKit.Net.Smtp;
-using MailKit.Security;
-using MimeKit;
-using MimeKit.Text;
-
-namespace BlogPostWebAPI.Services;
+﻿namespace BlogPostWebAPI.Services;
 
 public class EmailService(IConfiguration configuration) : IEmailService
 {

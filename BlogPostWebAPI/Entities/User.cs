@@ -1,8 +1,4 @@
-﻿using BlogPostWebAPI.Enums;
-using System.Data;
-using System.Reflection;
-
-namespace BlogPostWebAPI.Entities;
+﻿namespace BlogPostWebAPI.Entities;
 
 public sealed class User : Base
 {
