@@ -1,41 +1,36 @@
 ﻿using BlogPostWebAPI.DbContexts;
 using BlogPostWebAPI.Entities;
 using BlogPostWebAPI.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace BlogPostWebAPI.Repositories;
 
-public class UserRepository(AppDbContext dbContext): IUserRepository
+public class UserRepository(AppDbContext dbContext) : IUserRepository
 {
     private readonly AppDbContext _dbContext = dbContext;
 
-    public Task CreateAsync(User entity)
+    public async Task CreateAsync(User entity)
     {
-        throw new NotImplementedException();
+        await _dbContext.Users.AddAsync(entity);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task<IQueryable<User>> GetAllAsync(Expression<Func<User, bool>> expression)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IQueryable<User>> GetAllAsync(Expression<Func<User, bool>> expression)
+        => _dbContext.Users.Where(expression);
 
-    public Task<User?> GetByEmailAsync(Expression<Func<User, bool>> expression)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<User?> GetByEmailAsync(Expression<Func<User, bool>> expression)
+        => await _dbContext.Users.FirstOrDefaultAsync(expression);
 
-    public Task<User> GetByIdAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<User?> GetByIdAsync(int id)
+        => await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
 
-    public Task<User?> GetByUsernameAsync(Expression<Func<User, string>> expression)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<User?> GetByUsernameAsync(Expression<Func<User, bool>> expression)
+        => await _dbContext.Users.FirstOrDefaultAsync(expression);
 
-    public Task UpdateAsync(User entity)
+    public async Task UpdateAsync(User entity)
     {
-        throw new NotImplementedException();
+        _dbContext.Users.Update(entity);
+        await _dbContext.SaveChangesAsync();
     }
 }
