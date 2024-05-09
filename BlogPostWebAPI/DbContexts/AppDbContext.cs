@@ -28,7 +28,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
                 Role = Role.Admin,
                 Salt = "aa27789b-72ac-444f-991f-ebd03cc0bd65",
                 Password = "908ff1b8d4c1232ab41962217563de90f3d1de262d267f0d606737905443a97a",
-                ImagePath = @"..\..\wwwroot\userImages\admin.png"
+                ImagePath = @"..\..\wwwroot\images\admin.png"
             });
 
         modelBuilder.Entity<User>()

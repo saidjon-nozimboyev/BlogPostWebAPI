@@ -1,5 +1,9 @@
-﻿namespace BlogPostWebAPI.Interfaces.Common;
+﻿using System.Linq.Expressions;
 
-public interface IReadable
+namespace BlogPostWebAPI.Interfaces.Common;
+
+public interface IReadable<T>
 {
+    Task<T> GetByIdAsync(int id);
+    Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression);
 }
